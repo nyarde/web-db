@@ -19,27 +19,25 @@ let pendingDeleteId: number | null = null;
 
 function newCard(game: Game): HTMLElement {
     const card = document.createElement("div");
-    card.className = "card";
+    card.className = "col";
 
     card.innerHTML = `
-    <div class="col">
-        <article class="card h-100">
-            <button type="button"
-                class="btn btn-danger btn-sm delete-btn position-absolute top-0 end-0 m-2"
-                data-id="${game.id}"
-                aria-label="Delete ${game.title}">
-                🗑
-            </button>
-            <div class="card-body">
-                <h2 class="card-title h5">${game.title}</h2>
-                <span class="badge text-bg-primary">${game.genre}</span>
-            </div>
-            <div class="card-footer text-secondary d-flex justify-content-between">
-                <span>${game.platforms}</span>
-                <span>${game.year}</span>
-            </div>
-        </article>
-    </div>
+    <article class="card h-100">
+        <button type="button"
+            class="btn btn-danger btn-sm delete-btn position-absolute top-0 end-0 m-2"
+            data-id="${game.id}"
+            aria-label="Delete ${game.title}">
+            🗑
+        </button>
+        <div class="card-body">
+            <h2 class="card-title h5">${game.title}</h2>
+            <span class="badge text-bg-primary">${game.genre}</span>
+        </div>
+        <div class="card-footer text-secondary d-flex justify-content-between">
+            <span>${game.platforms}</span>
+            <span>${game.year}</span>
+        </div>
+    </article>
     `;
 
     return card;
