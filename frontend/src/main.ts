@@ -76,8 +76,9 @@ async function reload() {
 }
 
 async function render(games: Game[]) {
-    grid.replaceChildren();
-    games.forEach(game => grid.appendChild(newCard(game)));
+    grid.replaceChildren(
+        ...games.map(game => newCard(game))
+    );
 }
 
 form.addEventListener("submit", async (e) => {
