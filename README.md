@@ -8,8 +8,9 @@ Benjamin Rivera
 
 ## Tecnologia
 
-- Rust
+- Rust (axum + sqlx)
 - Sqlite
+- Vite
 - Typescript
 - Bootstrap
 
