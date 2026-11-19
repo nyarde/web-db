@@ -20,6 +20,5 @@ PRAGMA writable_schema=ON;
 CREATE TABLE IF NOT EXISTS sqlite_sequence(name,seq);
 DELETE FROM sqlite_sequence;
 INSERT INTO sqlite_sequence VALUES('games',10);
-serde_json = "1.0.154"
 PRAGMA writable_schema=OFF;
 COMMIT;
