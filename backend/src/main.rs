@@ -14,7 +14,7 @@ async fn main() -> Result<()> {
     let pool = SqlitePoolOptions::new()
         .connect("sqlite:../database/games.db").await?;
 
-    let addr = SocketAddr::new(Ipv6Addr::LOCALHOST.into(), 25564);
+    let addr = SocketAddr::new(Ipv6Addr::LOCALHOST.into(), 8080);
     let listener = TcpListener::bind(addr).await?;
 
     let api = Router::new()
