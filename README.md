@@ -2,6 +2,10 @@
 
 Una libreria de juegos creada usando rust y typescript.
 
+## Miembros
+
+Benjamin Rivera
+
 ## Tecnologia
 
 - Rust
