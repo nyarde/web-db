@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+<head>
+  <title>Test</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script type="module" src="main.ts"></script>
+</head>
+<body>
+  <nav class="navbar border-bottom">
+    <div class="container">
+      <span class="navbar-brand fw-bold">Game Library</span>
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addGameModal">
+        + Add game
+      </button>
+    </div>
+  </nav>
+
+  <header class="container py-5 text-center">
+    <h1 class="display-5 fw-bold">My Game Library</h1>
+    <p class="lead text-secondary">Search and filter the collection.</p>
+  </header>
+
+  <main class="container pb-5">
+    <section class="row g-3 mb-4" aria-label="Filters">
+      <div class="col-md-6">
+        <input id="search" type="search" class="form-control" placeholder="Search by title..." />
+      </div>
+      <div class="col-6 col-md-3">
+        <select id="genre" class="form-select">
+          <option value="">All genres</option>
+        </select>
+      </div>
+      <div class="col-6 col-md-3">
+        <select id="platform" class="form-select">
+          <option value="">All platforms</option>
+        </select>
+      </div>
+    </section>
+
+    <p id="count" class="text-secondary"></p>
+
+    <section id="results" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" aria-label="Games">
+    </section>
+
+    <p id="empty" class="text-center text-secondary d-none">No games match your filters.</p>
+  </main>
+
+  <footer class="border-top py-3 text-center text-secondary">
+    <small>Created by Benjamin Rivera</small>
+  </footer>
+
+  <div class="modal fade" id="addGameModal" tabindex="-1" aria-labelledby="addGameTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <form id="addGameForm" class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="addGameTitle">Add a game</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <div class="mb-3">
+            <label for="gameTitle" class="form-label">Title</label>
+            <input id="gameTitle" name="title" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="gameGenre" class="form-label">Genre</label>
+            <input id="gameGenre" name="genre" class="form-control" required />
+          </div>
+          <div class="mb-3">
+            <label for="gameYear" class="form-label">Year</label>
+            <input id="gameYear" name="year" type="number" min="1970" max="2100" class="form-control" />
+          </div>
+          <fieldset>
+            <legend class="form-label fs-6">Platforms</legend>
+            <div class="form-check form-check-inline">
+              <input id="pWin" name="platform" value="Windows" type="checkbox" class="form-check-input" />
+              <label for="pWin" class="form-check-label">Windows</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="pLinux" name="platform" value="Linux" type="checkbox" class="form-check-input" />
+              <label for="pLinux" class="form-check-label">Linux</label>
+            </div>
+            <div class="form-check form-check-inline">
+              <input id="pMac" name="platform" value="Mac" type="checkbox" class="form-check-input" />
+              <label for="pMac" class="form-check-label">Mac</label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title fs-5" id="deleteTitle">Delete game</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-0">Are you sure you want to delete <strong id="deleteName"></strong>? This can't be undone.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" id="confirmDelete" class="btn btn-danger">Delete</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

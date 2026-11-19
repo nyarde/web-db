@@ -1,0 +1,7 @@
+/.idea
+/backend/target
+/backend/Cargo.lock
+/database/games.db
+/frontend/dist
+/frontend/node_modules
+/frontend/pnpm-lock.yaml

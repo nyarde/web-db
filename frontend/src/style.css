@@ -1,0 +1,16 @@
+.delete-btn {
+    opacity: 0;
+    transition: opacity var(--transition);
+    z-index: 2;
+}
+
+.card:hover .delete-btn,
+.delete-btn:focus-visible {
+    opacity: 1;
+}
+
+@media (hover: none) {
+    .delete-btn {
+        opacity: 1;
+    }
+}
